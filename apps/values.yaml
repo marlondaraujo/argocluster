@@ -1,13 +1,14 @@
-config:
-  argoNamespace: argocd-bootstrap
-  spec:
-    destination:
-      server: https://kubernetes.default.svc
-    source:
-      repoURL: https://github.com/marlondaraujo/argocluster
-      targetRevision: main
+global:
+  config:
+    argoNamespace: argocd-bootstrap
+    spec:
+      destination:
+        server: https://kubernetes.default.svc
+      source:
+        repoURL: https://github.com/marlondaraujo/argocluster
+        targetRevision: main
 
-applications:
+apps:
 - name: argo-central
   tool:
     helm:
