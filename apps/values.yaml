@@ -13,3 +13,8 @@ apps:
   tool:
     helm:
       releaseName: argo-central
+
+- name: prometheus
+  tool:
+    helm:
+      releaseName: prometheus
