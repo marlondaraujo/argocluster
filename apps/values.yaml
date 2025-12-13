@@ -1,0 +1,13 @@
+config:
+  spec:
+    destination:
+      server: https://kubernetes.default.svc
+    source:
+      repoURL: https://github.com/marlondaraujo/argocluster
+      targetRevision: main
+
+applications:
+- name: argocd-central
+  tool:
+    helm:
+      releaseName: argocd-central
