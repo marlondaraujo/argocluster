@@ -9,7 +9,7 @@ global:
         targetRevision: main
 
 apps:
-- name: argo-central-9vr7rvjwx6wcp4v7-9vr7rvjwx6wcp4v7-9vr7rvjwx6wcp4v7-9vr7rvjwx6wcp4v7-9vr7rvjwx6wcp4v7-f
+- name: argo-central-9vr7rvjwx6wcp4v7-9vr7rvjwx6wcp4v7-9vr7rvjwx6wcp4v7-9vr7rvjwx6wcp4v7-9vr7rvjwx6wcp4v7-f9vr7rvjwx6wcp4v7-f9vr7rvjwx6wcp4v7-f9vr7rvjwx6wcp4v7-f9vr7rvjwx6wcp4v7-f9vr7rvjwx6wcp4v7-f
   tool:
     helm:
       releaseName: argo-central
