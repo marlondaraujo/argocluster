@@ -7,7 +7,7 @@ config:
       targetRevision: main
 
 applications:
-- name: argocd-central
+- name: argo-central
   tool:
     helm:
-      releaseName: argocd-central
+      releaseName: argo-central
