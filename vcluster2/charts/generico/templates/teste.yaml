@@ -1,4 +1,17 @@
-kind: teste
-spec:
-  data:
-    teste: 123
+apiVersion: v1
+kind: Secret
+metadata:
+  name: vcluster2
+  namespace: psc-argocd-config-central
+  labels:
+    argocd.argoproj.io/secret-type: cluster
+stringData:
+  name: vcluster2
+  server: https://vcluster2.vcluster2.svc.cluster.local:443
+  config: |
+    {
+      "bearerToken": "eyJhbGciOiJSUzI1NiIsImtpZCI6InFfSjRLS0RaVmFPWm5qUFY2ZEI2MFhuQU9EUmZ4aC1LaDJoWHQ0ZlZ0cVUifQ.eyJhdWQiOlsiaHR0cHM6Ly9rdWJlcm5ldGVzLmRlZmF1bHQuc3ZjLmNsdXN0ZXIubG9jYWwiXSwiZXhwIjoxNzY2NTI3MDk0LCJpYXQiOjE3NjY1MjM0OTQsImlzcyI6Imh0dHBzOi8va3ViZXJuZXRlcy5kZWZhdWx0LnN2Yy5jbHVzdGVyLmxvY2FsIiwianRpIjoiZDQ0YmUyMjgtY2IwMy00OThhLWFhZDEtNDk4NTI5MjgzNDRmIiwia3ViZXJuZXRlcy5pbyI6eyJuYW1lc3BhY2UiOiJrdWJlLXN5c3RlbSIsInNlcnZpY2VhY2NvdW50Ijp7Im5hbWUiOiJhcmdvY2QtbWFuYWdlciIsInVpZCI6IjllMTA3ZjdhLWI2MjctNDhmZC05NTc2LTczNDY1OGI2MjQyMyJ9fSwibmJmIjoxNzY2NTIzNDk0LCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6a3ViZS1zeXN0ZW06YXJnb2NkLW1hbmFnZXIifQ.m76YVekMqwg8-wK47w5ZKfucAheao-ZAu9_Cw9rIk0gciWlKb2bx5Sj_ORCkowFO0W4G_HF4gf06HzR6Pit0kcbu3Jo2QF7p48E6Ue-N2wfpB2yiAZli-MSOljPMv4rcffMTTUqCpxvECxGbQxmivfhqqSdJCT_IYpLgspbxpDnP06wCMjNpOjdUbECvbiwJTxxr1fie7134ERHer_cJeV1z-g25F6dHQkZDRLXupnLUPNytSv3WzTYo2zm5t0LywaxYf3EOfpfhHIyeFGjmhfROEjCAsNeTDHyUTlZRLSshPxjsP8kqwoUsOI66vFFXo2i8SEF6Z-O8k1yLMZvUdg",
+      "tlsClientConfig": {
+        "insecure": true
+      }
+    }
