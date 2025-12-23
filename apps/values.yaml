@@ -1,6 +1,6 @@
 global:
   config:
-    argoNamespace: argocd-bootstrap
+    argoNamespace: psc-argocd-config-central
     spec:
       destination:
         server: https://kubernetes.default.svc
