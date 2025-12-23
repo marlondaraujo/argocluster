@@ -1,3 +1,64 @@
-prometheus:
-  serviceMonitor:
-    enabled: true
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gogs
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gogs
+  template:
+    metadata:
+      labels:
+        app: gogs
+    spec:
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 1000
+        runAsGroup: 1000
+        fsGroup: 1000
+      containers:
+        - name: gogs
+          image: gogs/gogs:next-latest
+          ports:
+            - containerPort: 3000
+          volumeMounts:
+            - name: gogs-data
+              mountPath: /data
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop:
+                - ALL
+      volumes:
+        - name: gogs-data
+          emptyDir: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: gogs
+spec:
+  selector:
+    app: gogs
+  ports:
+    - name: http
+      port: 3000
+      targetPort: 3000
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: gogs
+spec:
+  rules:
+    - host: gogs.172.20.69.224.nip.io
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: gogs
+                port:
+                  number: 3000
