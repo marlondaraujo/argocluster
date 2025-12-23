@@ -20,3 +20,8 @@ apps:
       releaseName: prometheus
 
 - name: gogs
+
+- name: vcluster2
+  tool:
+    helm:
+      releaseName: vcluster2
