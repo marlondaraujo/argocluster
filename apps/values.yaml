@@ -18,3 +18,5 @@ apps:
   tool:
     helm:
       releaseName: prometheus
+
+- name: gogs
