@@ -1,1 +1,5 @@
-gitea: {}
+gitea:
+  admin:
+    username: "MyAwesomeGiteaAdmin"
+    password: "AReallyAwesomeGiteaPassword"
+    email: "gi@tea.com"
