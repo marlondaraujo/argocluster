@@ -19,6 +19,9 @@ spec:
     {{- with .tool }}
     {{- . | toYaml | nindent 4 }}
     {{- end }}
+  {{- with .ignoreDifferences }}
+  {{- . | toYaml | nindent 4 }}
+  {{- end }}
   syncPolicy:
     syncOptions:
     - CreateNamespace=true
