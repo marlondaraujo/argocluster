@@ -21,7 +21,7 @@ spec:
     {{- end }}
   {{- if .ignoreDifferences }}
   {{- with .ignoreDifferences }}
-  {{- . | toYaml | nindent 4 }}
+  {{- . | toYaml | nindent 6 }}
   {{- end }}
   {{- end }}
   syncPolicy:
