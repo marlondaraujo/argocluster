@@ -19,10 +19,9 @@ spec:
     {{- with .tool }}
     {{- . | toYaml | nindent 4 }}
     {{- end }}
-  {{- if .ignoreDifferences }}
   {{- with .ignoreDifferences }}
-  {{- . | toYaml | nindent 6 }}
-  {{- end }}
+  ignoreDifferences:
+{{ toYaml . | nindent 4 }}
   {{- end }}
   syncPolicy:
     syncOptions:
