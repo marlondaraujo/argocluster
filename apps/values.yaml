@@ -21,6 +21,8 @@ apps:
 
 - name: gogs
 
+- name: gitea
+
 - name: vcluster2
   tool:
     helm:
